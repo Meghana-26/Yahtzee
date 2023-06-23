@@ -1,0 +1,69 @@
+from random import randint
+
+# Displaying Scores for each category
+
+print("The Scores for each category : \n")
+print("1.Upper Section :\n-->Ones(1): Score will be sum of all one's\n-->Twos(2): Score will be sum of all two's\n-->Threes(3): Score will be sum of all three's\n-->Fours(4): Score will be sum of all four's\n-->Fives(5): Score will be sum of all five's\n-->Sixs(6): Score will be sum of all six's\n-->Bonous : (If the total score of the upper part is greater or equal to 63)\nBonus of be 35 points is added.\n")
+print("2.Lower Section :\n-->3 of a kind(3x): (if the dice show at least 3 of the same number)\nScore will be total of all dices\n-->4 of a kind(4x): (if the dice show at least 4 of the same number)\nScore will be total of all dices\n-->Full House(f): (if 3 dices show the same number and other two should show same number)\nScore will be 25 points\n-->Small Straight(s): (if any sequence of four numbers)\nScore will be 30 points\n-->Large Straight(l): (if any sequence of five numbers)\nScore will be 40 points\n-->YAHTZEE(y): (if 5 are same number)\nScore will be 50 points\n-->Chance(c): \nScore will be total of all dices\n-->Yahtzee Bonus(yb): (From the 2nd Yahtzee in the same game)\nBonus of 100 points are added for each Yahtzee.\n")
+
+# Rolling of Dices
+dices = []
+def roll():
+    for dice in range(5):
+        dices.append(randint(1,6))
+    print("The dices rolls are: " , end = ' ')
+    for dice in dices:
+        print(str(dice) + ' ', end = ' ')
+
+def ones(rolls):
+    sum = 0
+    for num in rolls:
+        if num == 1:
+            sum += num
+    return sum
+    
+def twos(rolls):
+    sum = 0
+    for num in rolls:
+        if num == 2:
+            sum += num
+    return sum
+    
+def threes(rolls):
+    sum = 0
+    for num in rolls:
+        if num == 3:
+            sum += num
+    return sum
+
+
+def fours(rolls):
+    sum = 0
+    for num in rolls:
+        if num == 4:
+            sum += num
+    return sum
+    
+def fives(rolls):
+    sum = 0
+    for num in rolls:
+        if num == 5:
+            sum += 5
+    return sum
+    
+def sixes(rolls):
+    sum = 0
+    for num in rolls:
+        if num == 6:
+            sum += num
+    return sum
+      
+roll()
+print("\n")
+print("sum_of_ones = " , ones(dices))
+print("sum_of_twos = " , twos(dices))
+print("sum_of_threes = ", threes(dices))
+print("sum_of_fours = ", fours(dices))
+print("sum_of_fives = ", fives(dices))
+print("sum_of_sixes = ", sixes(dices))
+
